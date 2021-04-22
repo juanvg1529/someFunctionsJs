@@ -62,7 +62,7 @@ function NewNames(UserNames) {
 
 
     }
-    return (referentes)
+    return (UserNames)
 }
 //NewNames(referentes);
 
@@ -74,9 +74,26 @@ function verifyUsername(UserNames) {
     UserVerify = `@${UserVerify}`;
     if (UserNames[UserNames.indexOf(UserVerify)] === UserVerify) {
         console.log(`congrats, we found the user: ${UserVerify} at the position ${UserNames.indexOf(UserVerify)}.`)
-
+        return UserNames;
     } else {
         console.log(`the user is not registered`)
+    }
+
+}
+/*Desarrolla una función que tome un username, y un array de users, 
+y que retorne el array sin el username dentro de sus elementos*/
+
+function DeleteUser(UserNames) {
+    let UserToDelete = prompt('Type the user to delete without the @')
+    UserToDelete = `@${UserToDelete}`; //here I concatenate the string 
+    let UserID = UserNames.indexOf(UserToDelete); //With indexOf, UserId will return me the position of the user to delete at the array of userLsit
+    if (UserNames[UserID] === UserToDelete) { //I compare if  the user to delete is at the array of the user list
+        console.log(`congrats, we found the user: ${UserToDelete} at the position ${UserID}.`);
+        UserNames.splice(UserID, 1); //Th user id will tell me the position were I wil delete the user requested
+        console.log(`the user deleted was: ${UserToDelete}`);
+        return UserNames;
+    } else {
+        console.log(`the user were not deleted`)
     }
 
 }
