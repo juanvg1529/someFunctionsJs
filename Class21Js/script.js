@@ -104,3 +104,35 @@ function UserSystem1(userList) {
     alert('End of the program');
 
 }
+
+/* Desarrolla una función que retorne el promedio de una lista de números.
+ La función deberá recibir como argumentos un array de números.*/
+let listaNumeros = [4, 50, 30, 21, 10, 55, 66, 20, 90];
+
+
+function promedio(arrayOfNumbers) {
+    let acumulador = 0;
+    let VarAverage;
+    for (let j = 0; j < arrayOfNumbers.length; j++) {
+
+        acumulador = acumulador + arrayOfNumbers[j];
+    }
+    VarAverage = acumulador / arrayOfNumbers.length;
+    return VarAverage;
+}
+
+let numbersitos = [10, 20, 30, 30, 60, 98, 1000];
+
+function EscandalotronV4(decibels) {
+    let decibelios = promedio(decibels);
+    if (decibelios <= 30) {
+        console.log('People are whispering');
+    }
+    if (decibelios < 60 && decibelios > 30) {
+        console.log('The sound level is normal')
+    }
+    if (decibelios > 90) {
+        console.log('Pople are making an scandal');
+    }
+
+}
